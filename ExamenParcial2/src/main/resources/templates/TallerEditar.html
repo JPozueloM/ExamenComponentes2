@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Taller</title>
+</head>
+<body>
+Editar:
+<form action="#" th:action="@{/editar}" th:object="${taller}" method="post">
+    <label for="name">Name</label>
+    <input type="text" hidden th:field="*{id}" id="id">
+    <input type="text" th:field="*{name}" id="name">
+    <input type="text" th:field="*{autor}" id="autor">
+    <input type="text" th:field="*{objetivo}" id="objetivo">
+    <input type="text" th:field="*{keywords}" id="keywords">
+    <input type="text" th:field="*{tarea}" id="tarea">
+    <input type="submit" value="Editar taller">   
+</form>
+
+</body>
+</html>

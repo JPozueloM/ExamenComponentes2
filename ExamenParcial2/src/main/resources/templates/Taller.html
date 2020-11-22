@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Anthologies</title>
+</head>
+<body>
+	<div>
+		<div>
+			<h4><span th:text="${work.name}">Name</span></h4>
+			<h5><span th:text="${work.autor}">Autor</span></h5>
+			<h5><span th:text="${work.objetivo}">Objetivo</span></h5>
+			<p th:text="${work.keywords}">Keywords</p>
+			<h5><span th:text="${work.tarea}">Tarea</span></h5>
+			
+		</div>
+		<ul>
+		<h5>Tareas:</h5>
+		<div th:each="entry : ${work.tarea}">
+			<li>
+				<h6><span th:text="${entry.name}">Name</span></h6>
+			</li>
+		</div>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Talleres</title>
+</head>
+<body>
+Insertar:
+<form action="#" th:action="@{/TallerInsertar}" th:object="${taller}" method="post">
+    <label for="name">Nombre</label>
+    <input type="text" th:field="*{name}" id="name">
+    
+    <label for="autor">Autor</label>
+    <select th:field="*{autor}" id="autor">
+    <option value="Adrian Gonzalez">Adrian Gonzalez</option>
+    <option value="Javier Pozuelo">Javier Pozuelo</option>
+    
+    <label for="categoria">Categoría</label>
+    <select th:field="*{categoriaId}" id="categoria">
+    <input type="text" th:field="*{date}" id="date">
+    <option value="0">Categoria</option>
+    <option th:each="operator : ${categorias}" th:value="${operator.id}" th:text="${operator.nombre}"></option></select>
+    
+    <label for="objetivo">Objetivo</label>
+    <input type="text" th:field="*{objetivo}" id="objetivo">
+    
+    <label for="objetivo">Keywords</label>
+    <input type="text" th:field="*{keywords}" id="keywords">
+    
+
+     <input type="submit" value="Agregar taller">   
+</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Talleres</title>
+</head>
+<body>
+	<div>
+		<h1>Lista de talleres</h1>
+		<ul>
+			<div th:each="entry : ${taller}">
+				<li>
+						<h4><span th:text="${entry.name}">Nombre</span></h4>
+						<h5><span th:text="${entry.autor}">Autor</span></h5>
+						<h5><span th:text="${entry.objetivo}">Objetivo</span></h5>
+						<p th:text="${entry.keywords}">Keywords</p>
+						<h5><span th:text="${entry.tarea}">Tarea</span></h5>
+						
+						<a th:href="@{'/editar/' + ${entry.id}}">Editar</a>
+						<a th:href="@{'/agregarTarea/' + ${entry.id}}">Agregar Tarea</a>
+						<a th:href="@{'/antology/' + ${entry.id}}">Tarea</a>
+				</li>
+			</div>
+		</ul>
+	</div>
+</body>
+</html>
